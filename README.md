@@ -8,7 +8,17 @@ Se plantean los siguientes objetivos:
 * Definición de arquetipos de trabajo para desarrollo de aplicaciones en la nube
 * Definición de recursos locales que apoyen el desarrollo de aplicaciones basado en estos arquetipos.
 
-## definicion de recursos locales 
+## Requerimientos y Premisas
+Para el dearrollo de esta investigación nos enfocaremos en el l a creación de un ambiente (stack) de dearrollo local que sirva de marco de trabajo para AWS como proveedor de nube.
+Otros proveedores podrán irse agregando posteriormente según la investigación logre sus objetivos o sume colaboradores.
+
+Para la prueba del trabajo propuesto se requiere:
+* Docker
+* awscli
+* git
+* nodejs
+
+## Definicion de recursos locales 
 Para el desarrollo y pruebas del desarrollo es importante contar con ambientes locales que permitan la validación rápida del trabajo. 
 Cuando se trata de dearrollo en la nube se plantea un reto a las pruebas locales, si bien se gana en flexibilidad para la gestión de los recursos globales, cubrir la curva 
 de apredizaje  de desarrolladores puede impactar el costo  o dificultar su control. Es por ello que crear un infraestrutura que modele los servicios de nube pero en 
