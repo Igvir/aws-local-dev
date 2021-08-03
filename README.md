@@ -30,7 +30,9 @@ LocalStack proporciona un marco de trabajo / prueba fácil de usar para desarrol
 ### Trabajando con LocalStack
 LocalStack es una herramienta muy util para la creacion de un ambiente local de desarrollo y prueba. 
 ```bash
-docker run --name localstacksvr --rm -d  -it -p 4566:4566 -p 4571:4571 localstack/localstack -e "SERVICES=dynamodb,s3" 
+docker run --name localstacksvr \
+  --rm -d  -it -p 4566:4566 -p 4571:4571 \ 
+  localstack/localstack -e "SERVICES=dynamodb,s3" 
 ```
 Para probar el servicio de dynamoDB se puede utilizar la herramienta de administración dynamodb-admin
 Para instalarla ejecutamos el comando
