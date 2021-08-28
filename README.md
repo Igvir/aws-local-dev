@@ -69,3 +69,4 @@ aws --endpoint-url http://localhost:4566 \
 * [Commandeer](https://getcommandeer.com/)
 * [Google Functions Framework for Node.js](https://github.com/GoogleCloudPlatform/functions-framework-nodejs)
 * [Functions Framework for Java](https://github.com/GoogleCloudPlatform/functions-framework-java)
+* [Subneting IP Calculator](http://jodies.de/)
