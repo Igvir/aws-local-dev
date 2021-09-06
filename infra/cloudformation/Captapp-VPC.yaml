@@ -247,6 +247,13 @@ Resources:
       GroupDescription: "Security group with no ingress rule"
       VpcId: !Ref VPC
 
+  S3Endpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      RouteTableIds: !Split [',',!Join [ ',', [ !Ref PublicRouteTable, !Ref PrivateRouteTable1, !Ref PrivateRouteTable2 ]]]
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
+      VpcId: !Ref VPC
+
 Outputs:
   VPC:
     Description: A reference to the created VPC
@@ -287,3 +294,9 @@ Outputs:
   NoIngressSecurityGroup:
     Description: Security group with no ingress rule
     Value: !Ref NoIngressSecurityGroup
+
+  Endpoint:
+    Description: 'The VPC endpoint to S3.'
+    Value: !Ref S3Endpoint
+    Export:
+      Name: !Sub '${AWS::StackName}-S3Enpoint'    
