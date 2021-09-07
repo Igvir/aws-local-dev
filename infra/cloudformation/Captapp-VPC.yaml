@@ -254,6 +254,13 @@ Resources:
       ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
       VpcId: !Ref VPC
 
+  RDSEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.rds'
+      VpcEndpointType: Interface 
+      VpcId: !Ref VPC
+
 Outputs:
   VPC:
     Description: A reference to the created VPC
@@ -299,4 +306,10 @@ Outputs:
     Description: 'The VPC endpoint to S3.'
     Value: !Ref S3Endpoint
     Export:
-      Name: !Sub '${AWS::StackName}-S3Enpoint'    
+      Name: !Sub '${AWS::StackName}-S3Enpoint'   
+
+  RDSEndpoint:
+    Description: 'The VPC endpoint to RDS.'
+    Value: !Ref RDSEndpoint
+    Export:
+      Name: !Sub '${AWS::StackName}-RDSEnpoint'    
