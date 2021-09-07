@@ -261,6 +261,15 @@ Resources:
       VpcEndpointType: Interface 
       VpcId: !Ref VPC
 
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupName: db-subnet-group
+      DBSubnetGroupDescription: db-subnet-group
+      SubnetIds:
+        - !Ref PrivateSubnet12
+        - !Ref PrivateSubnet22
+
 Outputs:
   VPC:
     Description: A reference to the created VPC
@@ -312,4 +321,8 @@ Outputs:
     Description: 'The VPC endpoint to RDS.'
     Value: !Ref RDSEndpoint
     Export:
-      Name: !Sub '${AWS::StackName}-RDSEnpoint'    
+      Name: !Sub '${AWS::StackName}-RDSEnpoint'   
+
+  DBSubnetGroup:
+    Description: 'Subnet group for Database Services'
+    Value: !Ref DBSubnetGroup     
