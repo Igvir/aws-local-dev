@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  hello-lambda-nodejs12.x
+  hello-lambda-nodejs20.x
 
-  Sample SAM Template for hello-lambda-nodejs12.x
+  Sample SAM Template for hello-lambda-nodejs20.x
   
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -22,7 +22,7 @@ Resources:
             Path: /hello
             Method: get
     Metadata:
-      DockerTag: nodejs12.x-v1
+      DockerTag: nodejs20.x-v1
       DockerContext: ./hello-world
       Dockerfile: Dockerfile
 
