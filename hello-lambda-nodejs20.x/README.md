@@ -1,4 +1,4 @@
-# hello-lambda-nodejs12.x
+# hello-lambda-nodejs20.x
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
@@ -20,7 +20,7 @@ To use the SAM CLI, you need the following tools.
 
 You may need the following for local testing.
 
-* Node.js - [Install Node.js 12](https://nodejs.org/en/), including the NPM package management tool.
+* Node.js - [Install Node.js 20](https://nodejs.org/en/), including the NPM package management tool.
 
 To build and deploy your application for the first time, run the following in your shell:
 
