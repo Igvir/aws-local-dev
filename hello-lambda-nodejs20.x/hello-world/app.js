@@ -25,7 +25,12 @@ exports.lambdaHandler = async (event, context) => {
         };
         return response;
     } catch (err) {
-        console.error(err);
+        // Log structured error server-side only; never leak internals to the client (OWASP A09).
+        console.error(JSON.stringify({
+            level: 'error',
+            message: err && err.message ? err.message : 'Unhandled error',
+            awsRequestId: context && context.awsRequestId
+        }));
         return {
             statusCode: 500,
             body: JSON.stringify({ message: 'Internal server error' })

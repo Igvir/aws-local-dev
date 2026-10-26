@@ -5,6 +5,18 @@ Resources:
         Type: AWS::S3::Bucket
         Properties:
           BucketName: io.pratik.profileimages
+          BucketEncryption:
+            ServerSideEncryptionConfiguration:
+              - ServerSideEncryptionByDefault:
+                  SSEAlgorithm: AES256
+                BucketKeyEnabled: true
+          PublicAccessBlockConfiguration:
+            BlockPublicAcls: true
+            BlockPublicPolicy: true
+            IgnorePublicAcls: true
+            RestrictPublicBuckets: true
+          VersioningConfiguration:
+            Status: Enabled
     DynamoDBTable:
         Type: AWS::DynamoDB::Table
         Properties:
@@ -20,3 +32,5 @@ Resources:
           ProvisionedThroughput:
              ReadCapacityUnits: 5
              WriteCapacityUnits: 5
+          SSESpecification:
+             SSEEnabled: true

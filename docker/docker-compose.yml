@@ -1,3 +1,7 @@
+# SECURITY NOTE (OWASP A05 - Misconfiguration):
+# This compose file mounts the host Docker socket (/var/run/docker.sock), which grants
+# the container root-equivalent control over the host. This is acceptable ONLY for a
+# local LocalStack development environment. Do NOT run this on shared or production hosts.
 version: "3.8"
 
 services:
